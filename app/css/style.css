@@ -1,5 +1,5 @@
 .adding-form-title {
-    font-size: 35px;
+    font-size: 25px;
     margin-bottom: 30px;
 }
 
@@ -16,4 +16,8 @@
 .authorization-image {
     height: 100px;
     width: 100px;
+}
+
+.select-block{
+    margin-bottom: 30px;
 }

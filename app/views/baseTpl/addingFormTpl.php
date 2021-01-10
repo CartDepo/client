@@ -12,8 +12,3 @@
            </div>
          <?php endforeach; ?>
 
-        <button type="submit" class="btn btn-primary">Добавить</button>
-      </form>
-    </div>
-  </div>
-</div>

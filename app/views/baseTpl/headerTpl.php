@@ -22,11 +22,11 @@
       <ul class="navbar-nav mr-auto">
 
         <li class="nav-item active">
-          <a class="nav-link" href="/addClient">Добавить клиента</a>
+          <a class="nav-link" href="/client/addClient">Добавить клиента</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="/contract/addContract">Добавить контракт</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>

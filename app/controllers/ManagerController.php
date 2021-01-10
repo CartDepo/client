@@ -7,37 +7,32 @@ class ManagerController extends Controller {
       $this->model = new ManagerModel();
    }
 
-
    /*
     * Pages
     */
 
-   // all Contracts
+   // all Managers
    public function index() {
-//      $this->pageTpl = "v_addContract.php";
-//      $this->pageData['title'] = "Добавление контракта";
-//      $this->view->render($this->pageTpl, $this->pageData);
+
    }
 
-   // form to add Contract
-   public function addContract() {
-//      $this->pageTpl = "v_addClient.php";
-//      $this->pageData['fields'] = [
-//         'contractDate',
-//         'number',
-//         'clientId',
-//         'managerId',
-//         'statusId'
-//      ];
-//      $this->pageData['formUri'] = '/Сontract/addingContract';
-//      $this->pageData['title'] = "Добавление контракта";
-//      $this->view->render($this->pageTpl, $this->pageData);
+   // form to add Manager
+   public function addManager() {
+      $this->pageTpl = "v_addManager.php";
+      $this->pageData['fields'] = [
+         'fio',
+         'phone'
+      ];
+      $this->pageData['formUri'] = '/manager/addingManager';
+      $this->pageData['title'] = "Добавление контракта";
+      $this->view->render($this->pageTpl, $this->pageData);
    }
 
    /*
     * Actions
     */
-   public function addingContract() {
-
+   public function addingManager() {
+      $this->model->addNewManager();
+      header("Location: /manager/addManager");
    }
 }

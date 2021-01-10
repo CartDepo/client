@@ -29,7 +29,7 @@
           <a class="nav-link" href="/contract/addContract">Добавить контракт</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="/manager/addManager">Добавить менеджера</a>
         </li>
       </ul>
     </div>

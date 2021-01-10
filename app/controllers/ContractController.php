@@ -14,20 +14,19 @@ class ContractController extends Controller {
 
    // all Contracts
    public function index() {
-      $this->pageTpl = "v_addContract.php";
-      $this->pageData['title'] = "Добавление контракта";
-      $this->view->render($this->pageTpl, $this->pageData);
+
    }
 
    // form to add Contract
    public function addContract() {
       $this->pageTpl = "v_addContract.php";
       $this->pageData['fields'] = [
-         'contractDate',
-         'number',
-         'clientId',
-         'managerId'
+         'contractdate',
+         'cost',
+         'number'
       ];
+      $this->pageData['allClients'] = $this->model->getAllClientsForContract();
+      $this->pageData['allManagers'] = $this->model->getAllManagersForContract();
       $this->pageData['formUri'] = '/Contract/addingContract';
       $this->pageData['title'] = "Добавление контракта";
       $this->view->render($this->pageTpl, $this->pageData);
@@ -37,6 +36,7 @@ class ContractController extends Controller {
     * Actions
     */
    public function addingContract() {
-
+      $this->model->addNewContract();
+      header("Location: /contract/addContract");
    }
 }

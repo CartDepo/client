@@ -32,6 +32,7 @@
             <a class="nav-link" href="/cart/addCart">Добавить вагон</a>
             <a class="nav-link" href="/crash/addCrash">Добавить неисправность</a>
             <a class="nav-link" href="/detailType/addDetailType">Добавить тип детали</a>
+            <a class="nav-link" href="/detail/addDetail">Добавить деталь</a>
           </div>
         </li>
 

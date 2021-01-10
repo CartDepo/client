@@ -1,4 +1,4 @@
-<script src="<?=ROOT?>/app/js/jquery.js"></script>
-<script src="<?=ROOT?>/app/js/bootstrap.js"></script>
+<script src="<?=PROJECT_FOLDER_PATH?>js/jquery.js"></script>
+<script src="<?=PROJECT_FOLDER_PATH?>js/bootstrap.js"></script>
 </body>
 </html>

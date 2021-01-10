@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
-define("ROOT", __DIR__ . '/app');
+define("ROOT", __DIR__ . '/app/');
 
 require_once("app/conf/config.php");
 //

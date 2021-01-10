@@ -1,5 +1,7 @@
 <?php
 
+// Path to app
+define("PROJECT_FOLDER_PATH", "/app/");
 
 // PATHS
 define("CONTROLLER_PATH", ROOT . "/controllers/");
@@ -9,12 +11,6 @@ define("VIEW_PATH", ROOT . "/views/");
 // sys files
 require_once("RequestData.php");
 require_once("Routing.php");
-
-// SETTINGS
-
-// Objects
-
-// core files
 
 // path to general files
 require_once MODEL_PATH . 'Model.php';

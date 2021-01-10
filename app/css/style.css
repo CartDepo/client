@@ -1,0 +1,19 @@
+.adding-form-title {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.authorization-row {
+    margin-top: 50px;
+}
+
+.authorization-image-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authorization-image {
+    height: 100px;
+    width: 100px;
+}

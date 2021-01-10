@@ -34,6 +34,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/cart/addCart">Добавить вагон</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/crash/addCrash">Добавить неисправность</a>
+        </li>
       </ul>
     </div>
   </nav>

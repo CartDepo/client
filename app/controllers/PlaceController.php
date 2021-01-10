@@ -17,22 +17,22 @@ class PlaceController extends Controller {
    }
 
    // form to add Place
-   public function addManager() {
-//      $this->pageTpl = "v_addManager.php";
-//      $this->pageData['fields'] = [
-//         'fio',
-//         'phone'
-//      ];
-//      $this->pageData['formUri'] = '/manager/addingManager';
-//      $this->pageData['title'] = "Добавление контракта";
-//      $this->view->render($this->pageTpl, $this->pageData);
+   public function addPlace() {
+      $this->pageTpl = "v_addManager.php";
+      $this->pageData['fields'] = [
+         'fio',
+         'phone'
+      ];
+      $this->pageData['formUri'] = '/place/addingPlaces';
+      $this->pageData['title'] = "Добавление расположения";
+      $this->view->render($this->pageTpl, $this->pageData);
    }
 
    /*
     * Actions
     */
-   public function addingManager() {
-//      $this->model->addNewManager();
-//      header("Location: /manager/addManager");
+   public function addingPlaces() {
+      $this->model->addNewplaces();
+      header("Location: /place/addPlace");
    }
 }

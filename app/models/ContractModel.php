@@ -11,37 +11,29 @@ class ContractModel implements Model {
 
       $url = 'https://depo-api-beta.herokuapp.com/contract/add';
 
-      // adding first get param
-      $firstKey = array_keys($post_data)[0];
-      $value = $post_data[$firstKey];
-      $url = $url . "?" . $firstKey;
-
-      if (strlen($value) != 0) {
-         $url = $url . "=" . $value;
-      }
-
-      // delete processed field
-      unset($post_data[$firstKey]);
-
-      // adding another get params
-      foreach ($post_data as $key => $value) {
-         $url = $url . "&" . $key;
-
-         if (strlen($value) != 0) {
-            $url = $url . "=" . $value;
-         } else {
-            $url = $url . "=";
-         }
-      }
+      $url = RequestMethods::makeGetRequest($url, $post_data);
 
       $ch = curl_init($url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       //Set the content type to application/json
       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
          'Content-Type: application/json'));
       curl_exec($ch);
       curl_close($ch);
+   }
+
+   public function getAllContracts() {
+      $url = 'https://depo-api-beta.herokuapp.com/contract/all';
+
+      $ch = curl_init($url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      //Set the content type to application/json
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+         'Content-Type: application/json'));
+      $result = curl_exec($ch);
+      curl_close($ch);
+
+      return $result;
    }
 
    public function getAllClientsForContract() {

@@ -8,6 +8,10 @@ define("CONTROLLER_PATH", ROOT . "/controllers/");
 define("MODEL_PATH", ROOT . "/models/");
 define("VIEW_PATH", ROOT . "/views/");
 
+// core
+require_once(ROOT . "core/Validate.php");
+require_once(ROOT . "core/RequestMethods.php");
+
 // sys files
 require_once("RequestData.php");
 require_once("Routing.php");

@@ -31,6 +31,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/manager/addManager">Добавить менеджера</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cart/addCart">Добавить вагон</a>
+        </li>
       </ul>
     </div>
   </nav>

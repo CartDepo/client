@@ -11,6 +11,7 @@ define("VIEW_PATH", ROOT . "/views/");
 // core
 require_once(ROOT . "core/Validate.php");
 require_once(ROOT . "core/RequestMethods.php");
+require_once(ROOT . "core/TableMethods.php");
 
 // sys files
 require_once("RequestData.php");

@@ -13,6 +13,15 @@ class CrashController extends Controller {
 
 //   All crashes
    public function index() {
+      $this->pageTpl = "v_allCrashes.php";
+
+      $allCrashes                    = $this->model->getAllCrashes();
+      $this->pageData['notes']       = $allCrashes;
+      $this->pageData['tableTitles'] = TableMethods::getTableTitles($allCrashes[0]);
+
+      $this->pageData['formUri'] = '/crash/addingCrash';
+      $this->pageData['title']   = "Список неисправностей";
+      $this->view->render($this->pageTpl, $this->pageData);
    }
 
    // form to add crash

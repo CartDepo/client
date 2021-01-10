@@ -26,7 +26,7 @@
 
    <!--   choose the crash status-->
    <div class="select-block">
-      <label for="crash-status-id">place</label>
+      <label for="crash-status-id">crash status</label>
       <select name="crashstatusid" class="browser-default custom-select select-field" id="crash-status-id">
          <?php foreach ($pageData['allStatuses'] as $value): ?>
             <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>

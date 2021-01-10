@@ -21,22 +21,20 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item active">
-          <a class="nav-link" href="/client/addClient">Добавить клиента</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Добавить
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="nav-link" href="/client/addClient">Добавить клиента</a>
+            <a class="nav-link" href="/contract/addContract">Добавить контракт</a>
+            <a class="nav-link" href="/manager/addManager">Добавить менеджера</a>
+            <a class="nav-link" href="/cart/addCart">Добавить вагон</a>
+            <a class="nav-link" href="/crash/addCrash">Добавить неисправность</a>
+            <a class="nav-link" href="/detailType/addDetailType">Добавить тип детали</a>
+          </div>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/contract/addContract">Добавить контракт</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/manager/addManager">Добавить менеджера</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cart/addCart">Добавить вагон</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/crash/addCrash">Добавить неисправность</a>
-        </li>
       </ul>
     </div>
   </nav>

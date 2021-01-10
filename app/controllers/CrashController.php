@@ -26,7 +26,7 @@ class CrashController extends Controller {
       $this->pageData['allStatuses'] = $this->model->getAllCrashStatusesForCrash();
 
       $this->pageData['formUri'] = '/crash/addingCrash';
-      $this->pageData['title']   = "Добавление неисправности вагона";
+      $this->pageData['title']   = "Добавить неисправность";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 

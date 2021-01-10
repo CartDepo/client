@@ -1,18 +1,18 @@
 <?php
 
-class ClientModel implements Model {
-   public function addNewClient() {
+
+class DetailTypeModel implements Model {
+
+   public function addNewDetailType() {
       $request = RequestData::getInstance();
       $post_data = $request->getPost();
 
-      $url = 'https://depo-api-beta.herokuapp.com/client/add';
+      $url = 'https://depo-api-beta.herokuapp.com/detail-type/add';
+
+      $url = RequestMethods::makeGetRequest($url, $post_data);
 
       $ch = curl_init($url);
-      curl_setopt($ch, CURLOPT_POST, 1);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-      $data = $post_data;
-      $jsonDataEncoded = json_encode($data);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
 
       //Set the content type to application/json
       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -21,9 +21,9 @@ class ClientModel implements Model {
       curl_close($ch);
    }
 
-   public function getAllClients() {
+   public function getAllDetailTypes() {
 
-      $url = 'https://depo-api-beta.herokuapp.com/client/all';
+      $url = 'https://depo-api-beta.herokuapp.com/detail-type/all';
 
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

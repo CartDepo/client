@@ -25,20 +25,17 @@ class CrashModel implements Model{
 
    public function getAllCartsForCrash() {
       $cartModel = new CartModel();
-      $result = $cartModel->getAllCarts();
-      return json_decode($result, true);
+      return $cartModel->getAllCarts();
    }
 
    public function getAllCrashStatusesForCrash() {
       $crashStatusModel = new CrashStatusModel();
-      $result = $crashStatusModel->getAllCrashStatuses();
-      return json_decode($result, true);
+      return $crashStatusModel->getAllCrashStatuses();
    }
 
    public function getAllCrashTypesForCrash() {
       $crashTypeModel = new CrashTypeModel();
-      $result = $crashTypeModel->getAllCrashTypes();
-      return json_decode($result, true);
+      return $crashTypeModel->getAllCrashTypes();
    }
 
    public function getAllCrashes() {
@@ -53,7 +50,7 @@ class CrashModel implements Model{
       $result = curl_exec($ch);
       curl_close($ch);
 
-      return $result;
+      return json_decode($result, true);
    }
 
    public function checkParams(array $params, string $methodName) {

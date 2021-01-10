@@ -33,19 +33,17 @@ class ContractModel implements Model {
       $result = curl_exec($ch);
       curl_close($ch);
 
-      return $result;
+      return json_decode($result, true);
    }
 
    public function getAllClientsForContract() {
       $clientModel = new ClientModel();
-      $result = $clientModel->getAllClients();
-      return json_decode($result, true);
+      return $clientModel->getAllClients();
    }
 
    public function getAllManagersForContract() {
       $managerModel = new ManagerModel();
-      $result = $managerModel->getAllManagers();
-      return json_decode($result, true);
+      return $managerModel->getAllManagers();
    }
 
    public function checkParams(array $params, string $methodName) {

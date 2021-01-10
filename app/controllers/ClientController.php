@@ -25,7 +25,7 @@ class ClientController extends Controller {
          'phone'
       ];
       $this->pageData['formUri'] = '/Client/addingClient';
-      $this->pageData['title'] = "Добавление клиента";
+      $this->pageData['title'] = "Добавить клиента";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 

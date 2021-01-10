@@ -26,26 +26,22 @@ class CartModel implements Model {
 
    public function getAllClientsForCart() {
       $clientModel = new ClientModel();
-      $result = $clientModel->getAllClients();
-      return json_decode($result, true);
+      return $clientModel->getAllClients();
    }
 
    public function getAllContractsForCart() {
       $contractModel = new ContractModel();
-      $result = $contractModel->getAllContracts();
-      return json_decode($result, true);
+      return $contractModel->getAllContracts();
    }
 
    public function getAllPlacesForCart() {
       $placeModel = new PlaceModel();
-      $result = $placeModel->getAllPlaces();
-      return json_decode($result, true);
+      return $placeModel->getAllPlaces();
    }
 
    public function getAllTeamsForCart() {
       $teamsModel = new TeamModel();
-      $result = $teamsModel->getAllTeams();
-      return json_decode($result, true);
+      return $teamsModel->getAllTeams();
    }
 
    public function getAllCarts() {
@@ -60,7 +56,7 @@ class CartModel implements Model {
       $result = curl_exec($ch);
       curl_close($ch);
 
-      return $result;
+      return json_decode($result, true);
    }
 
    public function checkParams(array $params, string $methodName) {

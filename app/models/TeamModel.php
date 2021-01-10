@@ -13,7 +13,7 @@ class TeamModel implements Model {
          'Content-Type: application/json'));
       $result = curl_exec($ch);
       curl_close($ch);
-      return $result;
+      return json_decode($result, true);
    }
 
    public function checkParams(array $params, string $methodName) {

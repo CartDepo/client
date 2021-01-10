@@ -4,13 +4,13 @@
 class  RequestMethods {
 
    public static function makeGetRequest($url, $post_data){
-      $new_url = $url;
+      $newUrl = $url;
       $firstKey = array_keys($post_data)[0];
       $value = $post_data[$firstKey];
-      $new_url = $new_url . "?" . $firstKey;
+      $newUrl = $newUrl . "?" . $firstKey;
 
       if (strlen($value) != 0) {
-         $new_url = $new_url . "=" . $value;
+         $newUrl = $newUrl . "=" . $value;
       }
 
       // delete processed field
@@ -18,16 +18,16 @@ class  RequestMethods {
 
       // adding another get params
       foreach ($post_data as $key => $value) {
-         $new_url = $new_url . "&" . $key;
+         $newUrl = $newUrl . "&" . $key;
 
          if (strlen($value) != 0) {
-            $new_url = $new_url . "=" . $value;
+            $newUrl = $newUrl . "=" . $value;
          } else {
-            $new_url = $new_url . "=";
+            $newUrl = $newUrl . "=";
          }
       }
 
-      return $new_url;
+      return $newUrl;
    }
 
 }

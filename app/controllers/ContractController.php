@@ -28,7 +28,7 @@ class ContractController extends Controller {
       $this->pageData['allClients'] = $this->model->getAllClientsForContract();
       $this->pageData['allManagers'] = $this->model->getAllManagersForContract();
       $this->pageData['formUri'] = '/Contract/addingContract';
-      $this->pageData['title'] = "Добавление контракта";
+      $this->pageData['title'] = "Добавить контракт";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 

@@ -27,7 +27,7 @@ class CartController extends Controller {
       $this->pageData['allPlaces']    = $this->model->getAllPlacesForCart();
       $this->pageData['allTeams']     = $this->model->getAllTeamsForCart();
       $this->pageData['formUri']      = '/cart/addingCart';
-      $this->pageData['title']        = "Добавление вагона";
+      $this->pageData['title']        = "Добавить вагон";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 

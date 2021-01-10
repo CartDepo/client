@@ -24,7 +24,7 @@ class ManagerController extends Controller {
          'phone'
       ];
       $this->pageData['formUri'] = '/manager/addingManager';
-      $this->pageData['title'] = "Добавление контракта";
+      $this->pageData['title'] = "Добавить менеджера";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 

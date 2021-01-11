@@ -46,8 +46,9 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="nav-link" href="/crash">Неисправности</a>
             <a class="nav-link" href="/client">Клиенты</a>
-            <!--Level 3-->
+            <a class="nav-link" href="/place">Расположения</a>
 
+            <!--Level 3-->
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
               Свободные расположения

@@ -13,26 +13,34 @@ class PlaceController extends Controller {
 
    // all Places
    public function index() {
+      $this->pageTpl = "v_allPlaces.php";
 
+      $allPlaces                     = $this->model->getAllPlaces();
+      $this->pageData['notes']       = $allPlaces;
+      $this->pageData['tableTitles'] = TableMethods::getTableTitles($allPlaces[0]);
+
+      $this->pageData['formUri'] = '/place';
+      $this->pageData['title']   = "Список расположений";
+      $this->view->render($this->pageTpl, $this->pageData);
    }
 
    // form to add Place
    public function addPlace() {
-      $this->pageTpl = "v_addManager.php";
-      $this->pageData['fields'] = [
+      $this->pageTpl             = "v_addPlace.php";
+      $this->pageData['fields']  = [
          'fio',
          'phone'
       ];
-      $this->pageData['formUri'] = '/place/addingPlaces';
-      $this->pageData['title'] = "Добавление расположения";
+      $this->pageData['formUri'] = '/place/addingPlace';
+      $this->pageData['title']   = "Добавить расположение";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 
    /*
     * Actions
     */
-   public function addingPlaces() {
-      $this->model->addNewplaces();
+   public function addingPlace() {
+      $this->model->addNewPlace();
       header("Location: /place/addPlace");
    }
 }

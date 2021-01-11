@@ -29,5 +29,4 @@ class  RequestMethods {
 
       return $newUrl;
    }
-
 }

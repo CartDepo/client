@@ -4,7 +4,7 @@
 
 <?php if (!isset($pageData)) $pageData = []; ?>
 
-<!--  choose the client-->
+  <!--  choose the client-->
   <div class="select-block">
     <label for="clientId">client</label>
     <select name="clientid" class="browser-default custom-select select-field" id="clientId">
@@ -14,7 +14,7 @@
     </select>
   </div>
 
-<!--   choose the contract-->
+  <!--   choose the contract-->
   <div class="select-block">
     <label for="contractId">contract</label>
     <select name="contractid" class="browser-default custom-select select-field" id="contractId">
@@ -24,7 +24,7 @@
     </select>
   </div>
 
-<!--   choose the place-->
+  <!--   choose the place-->
   <div class="select-block">
     <label for="placeId">place</label>
     <select name="placeid" class="browser-default custom-select select-field" id="placeId">
@@ -34,7 +34,8 @@
     </select>
   </div>
 
-<!--   choose the team-->
+  <!--   choose the team-->
+<?php if (count($pageData['allTeams']) != 0): ?>
   <div class="select-block">
     <label for="teamId">team</label>
     <select name="teamid" class="browser-default custom-select select-field" id="teamId">
@@ -43,6 +44,11 @@
        <? endforeach; ?>
     </select>
   </div>
+<?php else: ?>
+  <div class="message-in-form">
+    <p>Нет свободных бригад</p>
+  </div>
+<?php endif; ?>
 
   <button type="submit" class="btn btn-primary">Добавить</button>
   </form>

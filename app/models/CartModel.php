@@ -41,7 +41,7 @@ class CartModel implements Model {
 
    public function getAllTeamsForCart() {
       $teamsModel = new TeamModel();
-      return $teamsModel->getAllTeams();
+      return $teamsModel->getAllFreeTeams();
    }
 
    public function getAllCarts() {

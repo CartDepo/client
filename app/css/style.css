@@ -18,6 +18,12 @@
     width: 100px;
 }
 
-.select-block{
+.select-block {
     margin-bottom: 30px;
+}
+
+.message-in-form {
+    text-align: center;
+    color: #ff2424;
+    font-weight: 700;
 }

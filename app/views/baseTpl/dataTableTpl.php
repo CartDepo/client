@@ -5,8 +5,8 @@
       <table class="table">
         <thead>
         <tr>
-           <?php if ($pageData['tableTitles']): ?>
-              <? foreach ($pageData['tableTitles'] as $title): ?>
+           <?php if ($pageData['tableTitlesName']): ?>
+              <? foreach ($pageData['tableTitlesName'] as $title): ?>
                <th scope="col"><?= $title ?></th>
               <? endforeach; ?>
            <?php endif; ?>
@@ -15,10 +15,12 @@
         <tbody>
         <?php if ($pageData['notes']): ?>
            <? foreach ($pageData['notes'] as $note): ?>
-              <? foreach ($pageData['tableTitles'] as $title): ?>
+              <? foreach ($pageData['fieldTitles'] as $title): ?>
                  <?php if (isset($note[$title]['name'])): ?>
                 <td><?= $note[$title]['name'] ?></td>
-                 <?php else: ?>
+                 <?php elseif (isset($note[$title]['number'])): ?>
+                <td><?= $note[$title]['number'] ?></td>
+                 <? else: ?>
                 <td><?= $note[$title] ?></td>
                  <?php endif; ?>
               <? endforeach; ?>

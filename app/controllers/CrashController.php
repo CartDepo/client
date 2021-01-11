@@ -17,9 +17,14 @@ class CrashController extends Controller {
 
       $allCrashes                    = $this->model->getAllCrashes();
       $this->pageData['notes']       = $allCrashes;
-      $this->pageData['tableTitles'] = TableMethods::getTableTitles($allCrashes[0]);
+      $this->pageData['fieldTitles'] = TableMethods::getFieldTitles($allCrashes[0]);
 
-      $this->pageData['formUri'] = '/crash/addingCrash';
+      // delete id from table
+      unset($this->pageData['fieldTitles'][0]);
+
+      // set russian titles to show table
+      $this->pageData['tableTitlesName'] = ['Описание', 'Тип', 'Статус', 'Номер вагона'];
+
       $this->pageData['title']   = "Список неисправностей";
       $this->view->render($this->pageTpl, $this->pageData);
    }

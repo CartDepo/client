@@ -17,9 +17,14 @@ class ClientController extends Controller {
 
       $allClients                    = $this->model->getAllClients();
       $this->pageData['notes']       = $allClients;
-      $this->pageData['tableTitles'] = TableMethods::getTableTitles($allClients[0]);
+      $this->pageData['fieldTitles'] = TableMethods::getFieldTitles($allClients[0]);
 
-      $this->pageData['formUri'] = '/crash/addingCrash';
+      // delete id from table
+      unset($this->pageData['fieldTitles'][0]);
+
+      // set russian titles to show table
+      $this->pageData['tableTitlesName'] = ['ФИО', 'Серия', 'Номер', 'Телефон'];
+
       $this->pageData['title']   = "Список клиентов";
       $this->view->render($this->pageTpl, $this->pageData);
    }

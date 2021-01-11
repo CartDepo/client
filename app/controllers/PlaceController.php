@@ -17,7 +17,13 @@ class PlaceController extends Controller {
 
       $allPlaces                     = $this->model->getAllPlaces();
       $this->pageData['notes']       = $allPlaces;
-      $this->pageData['tableTitles'] = TableMethods::getTableTitles($allPlaces[0]);
+      $this->pageData['fieldTitles'] = TableMethods::getFieldTitles($allPlaces[0]);
+
+      // delete id from table
+      unset($this->pageData['fieldTitles'][0]);
+
+      // set russian titles to show table
+      $this->pageData['tableTitlesName'] = ['Номер', 'Тип', 'Статус'];
 
       $this->pageData['title'] = "Список расположений";
       $this->view->render($this->pageTpl, $this->pageData);
@@ -32,7 +38,13 @@ class PlaceController extends Controller {
 
       $allPlaces                     = $this->model->getAllFreeObjects($get_params['placeType']);
       $this->pageData['notes']       = $allPlaces;
-      $this->pageData['tableTitles'] = TableMethods::getTableTitles($allPlaces[0]);
+      $this->pageData['fieldTitles'] = TableMethods::getFieldTitles($allPlaces[0]);
+
+      // delete id from table
+      unset($this->pageData['fieldTitles'][0]);
+
+      // set russian titles to show table
+      $this->pageData['tableTitlesName'] = ['Номер', 'Тип', 'Статус'];
 
       $this->pageData['title'] = "Список свободных ангаров";
       $this->view->render($this->pageTpl, $this->pageData);

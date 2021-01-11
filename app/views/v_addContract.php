@@ -5,7 +5,7 @@
 <?php if (!isset($pageData)) $pageData = []; ?>
 
   <div class="select-block">
-    <label for="clientId">client</label>
+    <label for="clientId">Клиент</label>
     <select name="clientid" class="browser-default custom-select select-field" id="clientId">
        <?php foreach ($pageData['allClients'] as $value): ?>
          <option value="<?=$value['id']?>"><?=$value['fio']?></option>
@@ -14,7 +14,7 @@
   </div>
 
   <div class="select-block">
-    <label for="managerId">manager</label>
+    <label for="managerId">Менеджер</label>
     <select name="managerid" class="browser-default custom-select select-field" id="managerId">
        <?php foreach ($pageData['allManagers'] as $value): ?>
          <option value="<?=$value['id']?>"><?=$value['fio']?></option>

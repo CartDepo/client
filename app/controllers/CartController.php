@@ -19,8 +19,8 @@ class CartController extends Controller {
    public function addCart() {
       $this->pageTpl                  = "v_addCart.php";
       $this->pageData['fields']       = [
-         'number',
-         'cartyear'
+         ['number', 'Номер'],
+         ['cartyear', 'Год']
       ];
       $this->pageData['allClients']   = $this->model->getAllClientsForCart();
       $this->pageData['allContracts'] = $this->model->getAllContractsForCart();

@@ -19,16 +19,16 @@ class ContractController extends Controller {
 
    // form to add Contract
    public function addContract() {
-      $this->pageTpl = "v_addContract.php";
-      $this->pageData['fields'] = [
-         'contractdate',
-         'cost',
-         'number'
+      $this->pageTpl                 = "v_addContract.php";
+      $this->pageData['fields']      = [
+         ['contractdate', 'Дата'],
+         ['cost', 'Стоимость'],
+         ['number', 'Номер'],
       ];
-      $this->pageData['allClients'] = $this->model->getAllClientsForContract();
+      $this->pageData['allClients']  = $this->model->getAllClientsForContract();
       $this->pageData['allManagers'] = $this->model->getAllManagersForContract();
-      $this->pageData['formUri'] = '/Contract/addingContract';
-      $this->pageData['title'] = "Добавить контракт";
+      $this->pageData['formUri']     = '/Contract/addingContract';
+      $this->pageData['title']       = "Добавить контракт";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 

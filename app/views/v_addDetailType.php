@@ -6,7 +6,7 @@
 
   <!--  choose the detail type-->
   <div class="select-block">
-    <label for="detailId">detail type</label>
+    <label for="detailId">Тип детали</label>
     <select name="detailTypeId" class="browser-default custom-select select-field" id="detailId">
        <?php foreach ($pageData['allDetailTypes'] as $value): ?>
          <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>

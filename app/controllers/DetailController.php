@@ -19,11 +19,11 @@ class DetailController extends Controller {
    public function addDetail() {
       $this->pageTpl            = "v_addDetail.php";
       $this->pageData['fields'] = [
-         'serialNumber'
+         ['serialNumber', 'Серийный номер']
       ];
 
       $this->pageData['allDetailTypes'] = $this->model->getAllDetailTypesForDetail();
-      $this->pageData['allCarts']        = $this->model->getAllCartsForDetail();
+      $this->pageData['allCarts']       = $this->model->getAllCartsForDetail();
 
       $this->pageData['formUri'] = '/detail/addingDetail';
       $this->pageData['title']   = "Добавить деталь для вагона";

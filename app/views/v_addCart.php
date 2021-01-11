@@ -6,7 +6,7 @@
 
   <!--  choose the client-->
   <div class="select-block">
-    <label for="clientId">client</label>
+    <label for="clientId">Клиент</label>
     <select name="clientid" class="browser-default custom-select select-field" id="clientId">
        <?php foreach ($pageData['allClients'] as $value): ?>
          <option value="<?= $value['id'] ?>"><?= $value['fio'] ?></option>
@@ -16,7 +16,7 @@
 
   <!--   choose the contract-->
   <div class="select-block">
-    <label for="contractId">contract</label>
+    <label for="contractId">Контракт</label>
     <select name="contractid" class="browser-default custom-select select-field" id="contractId">
        <?php foreach ($pageData['allContracts'] as $value): ?>
          <option value="<?= $value['id'] ?>"><?= $value['number'] ?></option>
@@ -26,7 +26,7 @@
 
   <!--   choose the place-->
   <div class="select-block">
-    <label for="placeId">place</label>
+    <label for="placeId">Расположение</label>
     <select name="placeid" class="browser-default custom-select select-field" id="placeId">
        <?php foreach ($pageData['allPlaces'] as $value): ?>
          <option value="<?= $value['id'] ?>"><?= $value['number'] ?></option>
@@ -37,7 +37,7 @@
   <!--   choose the team-->
 <?php if (count($pageData['allTeams']) != 0): ?>
   <div class="select-block">
-    <label for="teamId">team</label>
+    <label for="teamId">Бригада</label>
     <select name="teamid" class="browser-default custom-select select-field" id="teamId">
        <?php foreach ($pageData['allTeams'] as $value): ?>
          <option value="<?= $value['id'] ?>"><?= $value['number'] ?></option>

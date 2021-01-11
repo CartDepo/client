@@ -7,8 +7,8 @@
       <form id="formUserData" method="post" action="<?= $pageData['formUri'] ?>" class="form">
          <?php foreach ($pageData['fields'] as $value): ?>
            <div class="form-group">
-             <label for="<?= $value ?>"><?= $value ?></label>
-             <input type="text" class="form-control" id="<?= $value ?>" name="<?= $value ?>">
+             <label for="<?= $value[0] ?>"><?= $value[1] ?></label>
+             <input type="text" class="form-control" id="<?= $value[0] ?>" name="<?= $value[0] ?>">
            </div>
          <?php endforeach; ?>
 

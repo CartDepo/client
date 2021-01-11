@@ -18,13 +18,13 @@ class ManagerController extends Controller {
 
    // form to add Manager
    public function addManager() {
-      $this->pageTpl = "v_addManager.php";
-      $this->pageData['fields'] = [
-         'fio',
-         'phone'
+      $this->pageTpl             = "v_addManager.php";
+      $this->pageData['fields']  = [
+         ['fio', 'ФИО'],
+         ['phone', 'Телефон'],
       ];
       $this->pageData['formUri'] = '/manager/addingManager';
-      $this->pageData['title'] = "Добавить менеджера";
+      $this->pageData['title']   = "Добавить менеджера";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 

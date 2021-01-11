@@ -19,7 +19,7 @@ class DetailTypeController extends Controller {
    public function addDetailType() {
       $this->pageTpl             = "v_addDetailType.php";
       $this->pageData['fields']  = [
-         'amount'
+         ['amount', 'Количество']
       ];
 
       $this->pageData['allDetailTypes'] = $this->model->getAllDetailTypes();

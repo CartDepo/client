@@ -33,7 +33,7 @@ class CrashController extends Controller {
    public function addCrash() {
       $this->pageTpl                 = "v_addCrash.php";
       $this->pageData['fields']      = [
-         'description'
+         ['description', 'Описание']
       ];
       $this->pageData['allCarts']    = $this->model->getAllCartsForCrash();
       $this->pageData['allTypes']    = $this->model->getAllCrashTypesForCrash();

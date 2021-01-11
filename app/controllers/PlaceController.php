@@ -54,8 +54,8 @@ class PlaceController extends Controller {
    public function addPlace() {
       $this->pageTpl             = "v_addPlace.php";
       $this->pageData['fields']  = [
-         'fio',
-         'phone'
+         ['fio', 'ФИО'],
+         ['phone', 'Телефон'],
       ];
       $this->pageData['formUri'] = '/place/addingPlace';
       $this->pageData['title']   = "Добавить расположение";

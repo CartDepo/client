@@ -25,7 +25,7 @@ class ClientController extends Controller {
       // set russian titles to show table
       $this->pageData['tableTitlesName'] = ['ФИО', 'Серия', 'Номер', 'Телефон'];
 
-      $this->pageData['title']   = "Список клиентов";
+      $this->pageData['title'] = "Список клиентов";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 
@@ -33,10 +33,10 @@ class ClientController extends Controller {
    public function addClient() {
       $this->pageTpl             = "v_addClient.php";
       $this->pageData['fields']  = [
-         'fio',
-         'serial',
-         'number',
-         'phone'
+         ['fio', 'ФИО'],
+         ['serial', 'Серия паспорта'],
+         ['number', 'Номер паспорта'],
+         ['phone', 'Телефон']
       ];
       $this->pageData['formUri'] = '/Client/addingClient';
       $this->pageData['title']   = "Добавить клиента";

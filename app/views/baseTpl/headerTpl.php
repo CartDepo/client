@@ -1,4 +1,6 @@
 <?php if (!isset($pageData)) $pageData = []; ?>
+<?php $placeTypes = Menu::getPlaceTypes(); ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -55,8 +57,10 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="nav-link" href="#">Ангары</a>
-              <a class="nav-link" href="#">Хранилища</a>
+               <?php foreach ($placeTypes as $placeType): ?>
+                 <a class="nav-link"
+                    href="/place/allFree?placeType=<?= $placeType['id'] ?>"><?= $placeType['name'] ?></a>
+               <?php endforeach; ?>
             </div>
 
           </div>

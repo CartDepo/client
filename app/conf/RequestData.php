@@ -75,14 +75,11 @@ class RequestData {
       return $this->_post;
    }
 
-   public function getSign() {
-      $headers = $this->getHeaders();
-      if ((isset($headers['Sign']))) {
-         return $headers['Sign'];
-      } else if (isset($headers['sign'])) {
-         return $headers['sign'];
-      } else {
-         return false;
+   public function getGetParams() {
+      if (empty($this->_get)) {
+         $this->_get = (array)$_GET;
       }
+      return $this->_get;
    }
+
 }

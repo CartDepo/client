@@ -19,8 +19,22 @@ class PlaceController extends Controller {
       $this->pageData['notes']       = $allPlaces;
       $this->pageData['tableTitles'] = TableMethods::getTableTitles($allPlaces[0]);
 
-      $this->pageData['formUri'] = '/place';
-      $this->pageData['title']   = "Список расположений";
+      $this->pageData['title'] = "Список расположений";
+      $this->view->render($this->pageTpl, $this->pageData);
+   }
+
+   public function AllFree() {
+      $this->pageTpl = "v_allPlaces.php";
+
+      $request = RequestData::getInstance();
+
+      $get_params = $request->getGetParams();
+
+      $allPlaces                     = $this->model->getAllFreeObjects($get_params['placeType']);
+      $this->pageData['notes']       = $allPlaces;
+      $this->pageData['tableTitles'] = TableMethods::getTableTitles($allPlaces[0]);
+
+      $this->pageData['title'] = "Список свободных ангаров";
       $this->view->render($this->pageTpl, $this->pageData);
    }
 

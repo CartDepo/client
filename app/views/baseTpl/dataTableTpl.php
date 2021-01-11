@@ -5,22 +5,26 @@
       <table class="table">
         <thead>
         <tr>
-           <? foreach ($pageData['tableTitles'] as $title): ?>
-             <th scope="col"><?= $title ?></th>
-           <? endforeach; ?>
+           <?php if ($pageData['tableTitles']): ?>
+              <? foreach ($pageData['tableTitles'] as $title): ?>
+               <th scope="col"><?= $title ?></th>
+              <? endforeach; ?>
+           <?php endif; ?>
         </tr>
         </thead>
         <tbody>
-        <? foreach ($pageData['notes'] as $note): ?>
-           <? foreach ($pageData['tableTitles'] as $title): ?>
-              <?php if (isset($note[$title]['name'])): ?>
-              <td><?= $note[$title]['name'] ?></td>
-              <?php else: ?>
-              <td><?= $note[$title] ?></td>
-              <?php endif; ?>
+        <?php if ($pageData['notes']): ?>
+           <? foreach ($pageData['notes'] as $note): ?>
+              <? foreach ($pageData['tableTitles'] as $title): ?>
+                 <?php if (isset($note[$title]['name'])): ?>
+                <td><?= $note[$title]['name'] ?></td>
+                 <?php else: ?>
+                <td><?= $note[$title] ?></td>
+                 <?php endif; ?>
+              <? endforeach; ?>
+            </tr>
            <? endforeach; ?>
-          </tr>
-        <? endforeach; ?>
+        <?php endif; ?>
         </tbody>
       </table>
     </div>

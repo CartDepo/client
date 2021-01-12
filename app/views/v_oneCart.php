@@ -9,7 +9,8 @@
     <label for="placeId">Расположение</label>
     <select name="placeId" class="browser-default custom-select select-field" id="placeId">
        <?php foreach ($pageData['allPlaces'] as $value): ?>
-         <option value="<?= $value['id'] ?>"><?= $value['number'] ?></option>
+         <option <? if ($pageData['note']['place']['id'] == $value['id']): ?>  selected <? endif; ?>
+             value="<?= $value['id'] ?>"><?= $value['number'] ?></option>
        <? endforeach; ?>
     </select>
   </div>
@@ -20,7 +21,7 @@
     <label for="teamId">Бригада</label>
     <select name="teamId" class="browser-default custom-select select-field" id="teamId">
        <?php foreach ($pageData['allTeams'] as $value): ?>
-         <option <? if ($pageData['note']['id'] == $value['id']): ?>  selected <? endif; ?>
+         <option <? if ($pageData['note']['team']['id'] == $value['id']): ?>  selected <? endif; ?>
              value="<?= $value['id'] ?>"><?= $value['number'] ?></option>
        <? endforeach; ?>
     </select>

@@ -13,6 +13,20 @@ class CartController extends Controller {
 
 //   All carts
    public function index() {
+      $this->pageTpl = "v_allCarts.php";
+
+      $allCarts                      = $this->model->getAllCarts();
+      $this->pageData['notes']       = $allCarts;
+      $this->pageData['fieldTitles'] = TableMethods::getFieldTitles($allCarts[0]);
+
+      // delete id from table
+      unset($this->pageData['fieldTitles'][0]);
+
+      // set russian titles to show table
+      $this->pageData['tableTitlesName'] = ['Номер', 'Год', 'Договор', 'Бригада', 'Расположение'];
+
+      $this->pageData['title'] = "Список вагонов";
+      $this->view->render($this->pageTpl, $this->pageData);
    }
 
    // form to add cart

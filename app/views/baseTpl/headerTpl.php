@@ -46,6 +46,7 @@
             Просмотр
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="nav-link" href="/cart">Вагоны</a>
             <a class="nav-link" href="/crash">Неисправности</a>
             <a class="nav-link" href="/client">Клиенты</a>
             <a class="nav-link" href="/place">Расположения</a>

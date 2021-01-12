@@ -44,7 +44,6 @@ class ContractController extends Controller {
             'number',
             'year'
          ];
-         // set russian titles to show table
          $this->pageData['tableTitlesName'] = ['Номер', 'Год'];
 
          // if we get all notes

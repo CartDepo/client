@@ -13,7 +13,7 @@
   <title><?= $pageData['title'] ?></title>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Главная</a>
+    <a class="navbar-brand" href="/"><?= $pageData['title'] ?></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,6 +47,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="nav-link" href="/cart">Вагоны</a>
+            <a class="nav-link" href="/contract">Договоры</a>
             <a class="nav-link" href="/crash">Неисправности</a>
             <a class="nav-link" href="/client">Клиенты</a>
             <a class="nav-link" href="/place">Расположения</a>

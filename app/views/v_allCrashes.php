@@ -19,7 +19,7 @@
              <? foreach ($pageData['notes'] as $note): ?>
                 <? foreach ($pageData['fieldTitles'] as $title): ?>
                    <?php if ($title == 'description'): ?>
-                  <td><a href="/crash?id="<?= $note['id'] ?>><?= $note[$title] ?></a></td>
+                  <td><a href="/crash?id=<?= (string)$note['id'] ?>"><?= $note[$title] ?></a></td>
                    <?php else: ?>
                       <?php if (isset($note[$title]['name'])): ?>
                     <td><?= $note[$title]['name'] ?></td>

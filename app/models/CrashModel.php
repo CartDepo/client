@@ -4,9 +4,9 @@ require_once MODEL_PATH . "CrashStatusModel.php";
 require_once MODEL_PATH . "CrashTypeModel.php";
 require_once MODEL_PATH . "CartModel.php";
 
-class CrashModel implements Model{
+class CrashModel implements Model {
    public function addNewCrash() {
-      $request = RequestData::getInstance();
+      $request   = RequestData::getInstance();
       $post_data = $request->getPost();
 
       $url = 'https://depo-api-beta.herokuapp.com/crash/add';
@@ -49,8 +49,49 @@ class CrashModel implements Model{
          'Content-Type: application/json'));
       $result = curl_exec($ch);
       curl_close($ch);
+      return json_decode($result, true);
+   }
+
+   public function getOneCrash($crashId) {
+      $url = 'https://depo-api-beta.herokuapp.com/crash/getone?id=' . $crashId;
+
+      $ch = curl_init($url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      //Set the content type to application/json
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+         'Content-Type: application/json'));
+      $result = curl_exec($ch);
+      curl_close($ch);
 
       return json_decode($result, true);
+   }
+
+   public function saveOneCrash() {
+      $request   = RequestData::getInstance();
+      $post_data = $request->getPost();
+
+      $url = 'https://depo-api-beta.herokuapp.com/crash/change-status';
+
+      // select post fields
+      $new_post_data = [
+         'crashId' => $post_data['id'],
+         'statusId' => $post_data['crashstatusid']
+      ];
+
+      $url = RequestMethods::makeGetRequest($url, $new_post_data);
+
+      $ch = curl_init($url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+      //Set the content type to application/json
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+         'Content-Type: application/json'));
+      curl_exec($ch);
+      curl_close($ch);
+   }
+
+   public function createPost() {
+
    }
 
    public function checkParams(array $params, string $methodName) {

@@ -3,11 +3,11 @@
 
 class  RequestMethods {
 
-   public static function makeGetRequest($url, $post_data){
-      $newUrl = $url;
+   public static function makeGetRequest($url, $post_data) {
+      $newUrl   = $url;
       $firstKey = array_keys($post_data)[0];
-      $value = $post_data[$firstKey];
-      $newUrl = $newUrl . "?" . $firstKey;
+      $value    = $post_data[$firstKey];
+      $newUrl   = $newUrl . "?" . $firstKey;
 
       if (strlen($value) != 0) {
          $newUrl = $newUrl . "=" . $value;
@@ -16,7 +16,6 @@ class  RequestMethods {
       // delete processed field
       unset($post_data[$firstKey]);
 
-      // adding another get params
       foreach ($post_data as $key => $value) {
          $newUrl = $newUrl . "&" . $key;
 
@@ -26,7 +25,6 @@ class  RequestMethods {
             $newUrl = $newUrl . "=";
          }
       }
-
       return $newUrl;
    }
 }

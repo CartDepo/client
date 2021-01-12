@@ -20,4 +20,5 @@ class CrashTypeModel implements Model {
    public function checkParams(array $params, string $methodName) {
       // TODO: Implement checkParams() method.
    }
+
 }

@@ -8,15 +8,15 @@
         </div>
         <form>
           <div class="form-group">
-            <label for="exampleInputEmail1">Login</label>
+            <label for="exampleInputEmail1">Логин</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Enter email">
+                   placeholder="Введите логин">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1">Пароль</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите пароль">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Войти</button>
         </form>
       </div>
     </div>

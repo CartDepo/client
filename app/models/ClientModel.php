@@ -2,7 +2,7 @@
 
 class ClientModel implements Model {
    public function addNewClient() {
-      $request = RequestData::getInstance();
+      $request   = RequestData::getInstance();
       $post_data = $request->getPost();
 
       $url = 'https://depo-api-beta.herokuapp.com/client/add';
@@ -10,7 +10,7 @@ class ClientModel implements Model {
       $ch = curl_init($url);
       curl_setopt($ch, CURLOPT_POST, 1);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-      $data = $post_data;
+      $data            = $post_data;
       $jsonDataEncoded = json_encode($data);
       curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
 

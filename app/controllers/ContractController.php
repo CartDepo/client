@@ -18,8 +18,6 @@ class ContractController extends Controller {
       $request    = RequestData::getInstance();
       $get_params = $request->getGetParams();
 
-      var_dump($get_params);
-
       if ($get_params['id']) {
          $id                      = $get_params['id'];
          $this->pageTpl           = "v_oneContract.php";

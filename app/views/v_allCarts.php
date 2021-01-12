@@ -18,13 +18,17 @@
           <?php if ($pageData['notes']): ?>
              <? foreach ($pageData['notes'] as $note): ?>
                 <? foreach ($pageData['fieldTitles'] as $title): ?>
-                   <?php if (isset($note[$title]['name'])): ?>
-                  <td><a href="#"><?= $note[$title]['name'] ?></a></td>
-                   <?php elseif (isset($note[$title]['number'])): ?>
-                  <td><a href="#"><?= $note[$title]['number'] ?></a></td>
-                   <? else: ?>
-                  <td><a href="#"><?= $note[$title] ?></a></td>
-                   <?php endif; ?>
+                   <?php if ($title == 'number'): ?>
+                  <td><a href="/cart?id=<?= (string)$note['id'] ?>"><?= $note[$title] ?></a></td>
+                   <?php else: ?>
+                      <?php if (isset($note[$title]['name'])): ?>
+                    <td><a href="#"><?= $note[$title]['name'] ?></a></td>
+                      <?php elseif (isset($note[$title]['number'])): ?>
+                    <td><a href="#"><?= $note[$title]['number'] ?></a></td>
+                      <? else: ?>
+                    <td><a href="#"><?= $note[$title] ?></a></td>
+                      <?php endif; ?>
+                   <? endif; ?>
                 <? endforeach; ?>
               </tr>
              <? endforeach; ?>

@@ -22,8 +22,17 @@
     margin-bottom: 20px;
 }
 
+.cart-table-for-crashes {
+    margin-top: 50px;
+}
+
 .message-in-form {
     text-align: center;
     color: #ff2424;
     font-weight: 700;
+}
+
+.cart-crasher-title {
+    text-align: center;
+    margin-top: 50px;
 }
